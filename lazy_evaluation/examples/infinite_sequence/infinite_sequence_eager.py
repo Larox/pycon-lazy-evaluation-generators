@@ -1,13 +1,16 @@
 from temperature_sensor_mock import simulate_temperature_sensor
 
 
-def sensor_data():
+def sensor_data() -> list[int]:
     return [temp for temp in simulate_temperature_sensor()]
 
 
 def temperature_calculations():
     temp_data = sensor_data()
-    # some calculations with temp_data list
+    data = []
+    for temp in temp_data:
+        data.append(temp)
+        print(temp)
 
 
 try:

@@ -1,14 +1,11 @@
-from temperature_sensor_mock import simulate_temperature_sensor
+def infinite_sequence():
+    i = 0
+    while True:
+        yield i
+        i += 1
 
 
-def sensor_data():
-    yield next(simulate_temperature_sensor)
-
-
-def temperature_calculations():
-    temp_data = (temp for temp in simulate_temperature_sensor())
-    for i in range(0, 10000):
-        pass
-
-
-temperature_calculations()
+for item in infinite_sequence():
+    if item > 100:
+        break
+    # Do something here
